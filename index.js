@@ -1,59 +1,85 @@
-
-    /* 1 */ 
- /* let name = "Alex"
- let money  = 10000
- let account = 7777
-
- let user = prompt('What is your name?')
-
-
- if(user === "Alex"){
-
-    let number = prompt('What is your account number')
-    if(number === "7777" ){ 
-
-        let cash = prompt("How much to cash out?") 
-        if(cash <= 10000){
-           alert("Perfect")
-
-           if (cash <= 10000 ) {
-            console.log(10000-cash)
-           } else {
-            alert ("Insufficient funds")
-           }
-
-        } else {
-            alert ("Insufficient funds")
-          }
-
-    } else{
-     alert("User is not found bye")
+let students = [
+    {
+        name: "Shakhboz",
+        age: 18,
+        gender: "m"
+    },
+    {
+        name: "Alexandr",
+        age: 32,
+        gender: "m"
+    },
+    {
+        name: "Daler",
+        age: 15,
+        gender: "m"
+    },
+    {
+        name: "Muzaffar",
+        age: 19,
+        gender: "m"
+    },
+    {
+        name: "Eldor",
+        age: 16,
+        gender: "m"
+    },
+    {
+        name: "Ibragim",
+        age: 14,
+        gender: "w"
+    },
+    {
+        name: "Ravshan",
+        age: 18,
+        gender: "m"
+    },
+    {
+        name: "Timur",
+        age: 19,
+        gender: "w"
+    },
+    {
+        name: "Aziz",
+        age: 15,
+        gender: "w"
+    },
+    {
+        name: "Darya",
+        age: 26,
+        gender: "w"
+    },
+    {
+        name: "Mukhlisa",
+        age: 16,
+        gender: "w"
     }
+]
 
-    
+let teenagers = []
+let others = []
 
- } else {
-    alert("User is not found bye")
- } 
- */
-
-
- 
- /* 2 */
-
- let name = prompt("What is your name?")
- let age = prompt("How old are you?")
- let cash = prompt("How much money do you have?")
-
-
- if(name[0] === 'a' || name[0] === 'A' && age >= 20 && age <= 40 && cash >= 100){
-
-    let member = prompt("How many people are you?")
-    if(member <= 10){
-        alert("perfect")
+/*  for(let item of students) {
+    if(item.age <= 17) {
+        teenagers.push(item.name)
+        
     } else {
-        alert("oh sorry we do not have enough space")
+        others.push(item.name)
     }
- } else {
-    alert('bye')
- }
+}  */
+
+ for(let i = 0; i <= students.length - 1; i++) {
+    if(students[i].age <= 17) {
+        teenagers.push(students[i].name)
+    } else {
+        others.push(students[i].name)
+      
+    }
+}
+
+
+
+
+
+console.log(teenagers)
+console.log(others)
