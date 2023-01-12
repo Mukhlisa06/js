@@ -1,80 +1,176 @@
-let user = prompt('any name?')
-let queston = confirm("Do you want to delte this student?")
-
-let students = [
+let arr = [
     {
-        name: "Shakhboz",
-        age: 18,
-        gender: "m"
+        id: 1,
+        name: 'AZIZs_KABLUK',
+        budget: 500000,
+        tax: 12,
+        expensesPerYear: [
+            {
+                for: 'design',
+                total: 60000
+            },
+            {
+                for: 'material',
+                total: 70000
+            },
+            {
+                for: 'place',
+                total: 120000
+            },
+        ]
     },
     {
-        name: "Alexandr",
-        age: 32,
-        gender: "m"
+        id: 2,
+        name: 'KAMERON_CINEMA',
+        budget: 600000,
+        tax: 12,
+        expensesPerYear: [
+            {
+                for: 'camera',
+                total: 90000
+            },
+            {
+                for: 'actors',
+                total: 140000
+            },
+            {
+                for: 'electricity',
+                total: 50000
+            },
+        ]
     },
     {
-        name: "Daler",
-        age: 15,
-        gender: "m"
+        id: 3,
+        name: 'ISKANDARs_ZOO',
+        budget: 450000,
+        tax: 12,
+        expensesPerYear: [
+            {
+                for: 'animals',
+                total: 100000
+            },
+            {
+                for: 'cloune',
+                total: 15000
+            },
+            {
+                for: 'food',
+                total: 70000
+            },
+        ]
     },
     {
-        name: "Muzaffar",
-        age: 19,
-        gender: "m"
+        id: 4,
+        name: 'AMINs_SOOOO',
+        budget: 800000,
+        tax: 12,
+        expensesPerYear: [
+            {
+                for: 'house',
+                total: 200000
+            },
+            {
+                for: 'cars',
+                total: 150000
+            },
+            {
+                for: 'family',
+                total: 300000
+            },
+        ]
     },
-    {
-        name: "Eldor",
-        age: 16,
-        gender: "m"
-    },
-    {
-        name: "Ibragim",
-        age: 14,
-        gender: "w"
-    },
-    {
-        name: "Ravshan",
-        age: 18,
-        gender: "m"
-    },
-    {
-        name: "Timur",
-        age: 19,
-        gender: "w"
-    },
-    {
-        name: "Aziz",
-        age: 15,
-        gender: "w"
-    },
-    {
-        name: "Darya",
-        age: 26,
-        gender: "w"
-    },
-    {
-        name: "Mukhlisa",
-        age: 16,
-        gender: "w"
-    }
 ]
 
 
 
 
-let people = students.find(person => person.name === user)
 
-let index = students.map(x => {
-    return x.name;
-  }).indexOf(user);
 
-if(queston === true){
-    students.splice(index, 1);
+/*  arr.filter(item => {
+   let sum = item.tax  * item.budget / 100
+   let expensesPerYear = item.expensesPerYear.reduce((a,b) => {
+    return a + b.total
+   }, 0)
+   console.log(
+    `
+    Company: ${item.name}
+    Taxes: ${sum}
+    Expenses: ${expensesPerYear}
+    `
+   )
+})  */
 
-    console.log(students)
-} else {
-    console.log(people)
-}
- 
+let plusArr = []
+let minusArr = []
 
-  
+
+ for(let item of arr){
+    item.expensesPerMonth = 0
+
+    for(let itemTwo of item.expensesPerYear){
+        item.expensesPerMonth += itemTwo.total / 12
+
+        item.total = item.budget - itemTwo.total
+    }
+    
+    item.percent = item.expensesPerMonth * 100 / (item.budget / 12) 
+    
+
+
+    if(item.percent <= 70){
+        plusArr.push(item.name)
+    } else {
+        minusArr.push(item.name)
+    }
+} 
+
+
+
+
+
+
+
+console.log(arr)
+
+console.log(minusArr , plusArr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   
