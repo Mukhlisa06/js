@@ -1,80 +1,35 @@
-let user = prompt('any name?')
-let queston = confirm("Do you want to delte this student?")
+// .... 1 .....\\
 
-let students = [
-    {
-        name: "Shakhboz",
-        age: 18,
-        gender: "m"
-    },
-    {
-        name: "Alexandr",
-        age: 32,
-        gender: "m"
-    },
-    {
-        name: "Daler",
-        age: 15,
-        gender: "m"
-    },
-    {
-        name: "Muzaffar",
-        age: 19,
-        gender: "m"
-    },
-    {
-        name: "Eldor",
-        age: 16,
-        gender: "m"
-    },
-    {
-        name: "Ibragim",
-        age: 14,
-        gender: "w"
-    },
-    {
-        name: "Ravshan",
-        age: 18,
-        gender: "m"
-    },
-    {
-        name: "Timur",
-        age: 19,
-        gender: "w"
-    },
-    {
-        name: "Aziz",
-        age: 15,
-        gender: "w"
-    },
-    {
-        name: "Darya",
-        age: 26,
-        gender: "w"
-    },
-    {
-        name: "Mukhlisa",
-        age: 16,
-        gender: "w"
+/* function random (name) {
+    let em = "@" + "gmail.com"
+    let char = "_."
+    let num = "0123456789"
+    let line = 3
+    let generate = ""
+    let emailChart = ( char + num ).split( "" )
+
+    for( let i = 0; i < line ; i++){
+        generate += emailChart [
+            Math.floor(Math.random() * emailChart.length)
+        ] 
     }
-]
-
-
-
-
-let people = students.find(person => person.name === user)
-
-let index = students.map(x => {
-    return x.name;
-  }).indexOf(user);
-
-if(queston === true){
-    students.splice(index, 1);
-
-    console.log(students)
-} else {
-    console.log(people)
+    return (name + generate + em)
 }
- 
 
-  
+console.log(random("mukhlisa")) */
+
+      
+
+     //.....2......\\
+
+ function invert(array){
+   
+        if( array >= 0){ 
+          return true
+        } else {
+            return false
+        }
+    }
+
+
+console.log(invert(78)) 
